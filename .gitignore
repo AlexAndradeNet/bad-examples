@@ -1,8 +1,8 @@
 .DS_Store
-node_modules
-dist
+node_modules/
+dist/
 .env
-.vscode
+.vscode/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -10,8 +10,8 @@ __pycache__/
 htmlcov/
 .coverage
 .coverage.*
-.cache
-.idea
+.cache/
+.idea/
 *.iml
 *.iws
 out/
@@ -19,9 +19,9 @@ build/
 *.log
 *.sqlite3
 *.egg-info/
-target
-test-output
+target/
+test-output/
 .classpath
 .project
-.settings
+.settings/
 bin/
