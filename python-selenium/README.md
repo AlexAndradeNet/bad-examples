@@ -2,11 +2,6 @@
 
 This is a lightweight, modular Python automation framework built with **Selenium WebDriver**, **Pytest**, and **Allure** for elegant reporting. Designed for scalability, maintainability, and ease of use.
 
-## 👨‍💻 Author
-
-**Andres Velez Salazar**  
-QA Automation Engineer  
-[LinkedIn](https://www.linkedin.com/in/andres-mauricio-velez-salazar-qa) | [GitHub](https://github.com/avsautomation/)
 
 <h2 id="prerequisites">1. Prerequisites</h2>
 Before you start working with this project, ensure that you have the following prerequisites:
