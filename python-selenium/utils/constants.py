@@ -1,0 +1,3 @@
+DEFAULT_TIMES = {
+    "DEFAULT_TIMEOUT":20
+}

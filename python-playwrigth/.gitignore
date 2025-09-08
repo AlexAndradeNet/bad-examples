@@ -1,0 +1,16 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.log
+
+# Virtual environments
+venv/
+.env
+
+# Test output
+report.html
+
+# PyCharm config
+.idea/
+
+.DS_store
