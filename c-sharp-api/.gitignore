@@ -1,0 +1,16 @@
+# Compilation dependencis
+bin/
+obj/
+
+# packages
+packages/
+
+# Logs and test results
+*.log
+TestResults/
+
+
+# temps
+*.tmp
+*.temp
+
