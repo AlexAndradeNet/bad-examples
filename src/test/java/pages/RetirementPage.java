@@ -11,11 +11,11 @@ public class RetirementPage {
     @FindBy(css = "h2[class='h2 heading section-title  scroll-animation  fade ']")
     public WebElement poweringInnovationRetirementServicesHeader;
 
-    @FindBy(xpath = "//div[@class='flip-card-front card-front']//div[@class='card-text' and contains(.,'Machine learning')]")
-    public WebElement aiMachineLearningFlipCard;
+    @FindBy(xpath = "(//div[@class='flip-card-front card-front'])[3]")
+    public WebElement powerAndInnovationThirdCard;
 
     @FindBy(xpath = "(//div[@class='card-text small'])[3]")
-    public WebElement aiMachineLearningFlipCardMessages;
+    public WebElement powerAndInnovationThirdCardFlipped;
 
     @FindBy(xpath = "//a[@title=\"Let's get started\"]")
     public WebElement letsGetStartedButton;
@@ -25,17 +25,16 @@ public class RetirementPage {
     }
 
     public void mouseHoverToAiMachineLearningFlipCard() {
-        UIUtilities.mouseHover(aiMachineLearningFlipCard);
+        UIUtilities.mouseHover(powerAndInnovationThirdCard);
     }
 
     public String getAiMachineLearningFlipCardMessages() {
-        UIUtilities.waitForElementToBeVisible(aiMachineLearningFlipCardMessages);
-        return UIUtilities.getText(aiMachineLearningFlipCardMessages);
+        UIUtilities.waitForElementToBeVisible(powerAndInnovationThirdCardFlipped);
+        return UIUtilities.getText(powerAndInnovationThirdCardFlipped);
     }
 
     public void clickLetsGetStartedButton() {
         UIUtilities.click(letsGetStartedButton);
     }
-
 
 }
