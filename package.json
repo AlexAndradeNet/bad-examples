@@ -1,0 +1,25 @@
+{
+  "name": "blankfactor-automation-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --headed",
+    "test-headless": "npx playwright test",
+    "test-tag": "npx playwright test --headed --grep @wip",
+    "test-tag-headless": "npx playwright test --grep @wip",
+    "test-smoke": "npx playwright test --grep @smoke",
+    "report": "npx playwright show-report",
+    "postinstall": "npx playwright install",
+    "tscheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.1.0",
+    "dotenv": "^17.2.3",
+    "typescript": "^5.9.3"
+  }
+}
