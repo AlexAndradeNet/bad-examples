@@ -1,0 +1,26 @@
+{
+  "name": "cypress-blankfactor",
+  "version": "1.0.0",
+  "description": "Automation project for blankfactor flow",
+  "scripts": {
+    "test": "cypress run --headed --spec 'cypress/e2e/features/blankfactor.feature'",
+    "cypress:open": "cypress open",
+    "headed": "cypress run --headed --browser chrome",
+    "lint": "eslint . --fix"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "@eslint/js": "^10.0.1",
+    "cypress": "^15.8.2",
+    "cypress-real-events": "^1.15.0",
+    "eslint": "^10.0.3",
+    "eslint-plugin-cypress": "^6.2.0",
+    "globals": "^17.4.0"
+  }
+}

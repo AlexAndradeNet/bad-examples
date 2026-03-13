@@ -8,9 +8,9 @@ yarn-debug.log*
 yarn-error.log*
 /.pnp
 .pnp.js
+
 .vscode/*
+
 .idea
-.env
-playwright-report
-test-results
-target
+cypress/screenshots
+cypress/videos
