@@ -10,7 +10,12 @@ yarn-error.log*
 .pnp.js
 
 .vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
 .idea
 cypress/screenshots
 cypress/videos
+dist
+build
+coverage
