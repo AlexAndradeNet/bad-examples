@@ -1,9 +1,8 @@
 {
-  "include": [
-    "./node_modules/cypress",
-    "cypress/**/*.js"
-  ],
   "compilerOptions": {
+    "target": "ES6",
     "types": ["cypress", "node"]
-  }
+  },
+  "include": ["/**/*.js", "/**/*.mjs", "/**/*.cjs"],
+  "exclude": ["node_modules", "TestResult"]
 }
