@@ -6,19 +6,19 @@ This project is an end-to-end (E2E) automation test using **Cypress**, written w
 
 ## Technologies & Tools Used
 
-| Tool                                    | Version         |
-|-----------------------------------------|------------------|
-| [Cypress](https://www.cypress.io)       | ^15.8.2         |
-| [Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) | ^24.0.0 |
-| [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events) | ^1.15.0 |
-| [esbuild](https://esbuild.github.io/)   | Used as preprocessor |
-| Node.js                                 | ≥ v18           |
+| Tool                                                                               | Version              |
+| ---------------------------------------------------------------------------------- | -------------------- |
+| [Cypress](https://www.cypress.io)                                                  | ^15.8.2              |
+| [Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) | ^24.0.0              |
+| [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events)        | ^1.15.0              |
+| [esbuild](https://esbuild.github.io/)                                              | Used as preprocessor |
+| Node.js                                                                            | ≥ v18                |
 
 ---
 
 ## Project Structure
 
-```
+```text
 ├── cypress/
 │   ├── e2e/
 │   │   └── features/
@@ -41,19 +41,19 @@ This project is an end-to-end (E2E) automation test using **Cypress**, written w
 
 The scenario covers the following steps:
 
-1. *Visit the Blankfactor homepage*
-2. *Navigate to the Industries > Retirement and Wealth section*
-3. *Scroll to the “Powering innovation in retirement services” section*
-4. *Hover over the "AI & Machine Learning" card*
-5. *Copy and log the card’s back-side text*
-6. *Click the _Let's get started_ button*
-7. *Assert the URL and page title of the Contact page*
+1. _Visit the Blankfactor homepage_
+2. _Navigate to the Industries > Retirement and Wealth section_
+3. _Scroll to the “Powering innovation in retirement services” section_
+4. _Hover over the "AI & Machine Learning" card_
+5. _Copy and log the card’s back-side text_
+6. _Click the *Let's get started* button_
+7. _Assert the URL and page title of the Contact page_
 
 ---
 
 ## Advanced Features
 
--  `cy.realHover()`  
+- `cy.realHover()`  
   Used to simulate real hover actions on animated cards (`flip-card`) that respond to mouse movements.
 
 - `cy.get('@copiedCardText')`  
@@ -74,3 +74,4 @@ npm run test:navigation
 
 # Run tests in headed mode (useful for CI/CD)
 npm run headed
+```

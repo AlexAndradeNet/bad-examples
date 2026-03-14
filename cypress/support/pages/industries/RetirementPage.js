@@ -1,29 +1,26 @@
 const elements = {
-    poweringInnovationSection: () => cy.contains('h2', 'Powering innovation in retirement services'),
-    AIAndMLCard: () => cy.contains('.card-wrapper', 'AI & Machine learning'),
-    titleSection: '.card-text.small',
-    letsGetStartedButton: () => cy.contains("a", "Let's get started"),
-}
+    poweringInnovationSection: () => cy.get('h2.section-title'),
+    thirdCard: () => cy.contains('.flip-card-inner', 'AI & Machine learning'),
+    letsGetStartedButton: () => cy.contains('a', "Let's get started"),
+};
 
 export default class RetirementPage {
-
     goToCardAndCopyText(expectedText) {
-        elements.AIAndMLCard()
-            .scrollIntoView()
-            .should('be.visible')
+        elements.poweringInnovationSection().scrollIntoView();
+        // Trigger the lazy loading of the cards
+
+        elements
+            .thirdCard()
             .realHover()
-            .find(elements.titleSection)
-            .invoke('text').then((text) => {
+            .invoke('text')
+            .then((text) => {
                 expect(text).to.include(expectedText);
                 console.log('Copied text:', text);
             });
     }
 
     goToLetsGetStartedButton() {
-        elements.letsGetStartedButton()
-            .scrollIntoView()
-            .should('be.visible')
-            .click();
+        elements.letsGetStartedButton().click();
     }
 
     verifyContactPageLoaded(urlFragment) {
@@ -33,5 +30,4 @@ export default class RetirementPage {
             console.log('Page title:', pageTitle);
         });
     }
-
 }
