@@ -9,13 +9,11 @@ export class RetirementWealthPage {
     constructor(page: Page) {
         this.page = page;
         this.poweringInnovationRetirementServicesHeader = this.page.locator(
-            "//h2[@class='h2 heading section-title  scroll-animation  fade ']",
+            "h2.section-title",
         );
         this.thirdCard = this.page.locator('.flip-card-inner')
                                                 .getByText('AI & Machine learning');
-        this.letsGetStartedButton = this.page.locator(
-            '//a[@title="Let\'s get started"]',
-        );
+        this.letsGetStartedButton = this.page.getByRole('link', { name: "Let's get started" });
     }
 
     public async mouseHoverToThirdCard() {
