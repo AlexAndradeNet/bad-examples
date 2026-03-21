@@ -11,10 +11,10 @@ test("Verify contact page title and url @wip", async ({ page }) => {
     await homePage.clickRetirementWealthLearnMoreButton();
 
     const retirementWealthPage = new RetirementWealthPage(page);
-    await retirementWealthPage.mouseHoverToAiMachineLearningFlipCard();
+    await retirementWealthPage.mouseHoverToThirdCard();
 
-    const flipCardMessage = await retirementWealthPage.getAiMachineLearningFlipCardMessage();
-    console.log(`AI & Machine learning flip card message: ${flipCardMessage}`);
+    const flipCardMessage = await retirementWealthPage.getThirdCardFlippedMessage();
+    console.log(`Third card flip message: ${flipCardMessage}`);
 
     await retirementWealthPage.scrollToBottom();
 

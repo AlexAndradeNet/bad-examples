@@ -3,8 +3,7 @@ import { Locator, Page } from "playwright/types/test";
 export class RetirementWealthPage {
     private readonly page: Page;
     private readonly poweringInnovationRetirementServicesHeader: Locator;
-    private readonly aiMachineLearningFlipCard: Locator;
-    private readonly aiMachineLearningFlipCardMessages: Locator;
+    private readonly thirdCard: Locator;
     private readonly letsGetStartedButton: Locator;
 
     constructor(page: Page) {
@@ -12,23 +11,19 @@ export class RetirementWealthPage {
         this.poweringInnovationRetirementServicesHeader = this.page.locator(
             "//h2[@class='h2 heading section-title  scroll-animation  fade ']",
         );
-        this.aiMachineLearningFlipCard = this.page.locator(
-            "//div[@class='flip-card-front card-front']//div[@class='card-text' and contains(.,'Machine learning')]",
-        );
-        this.aiMachineLearningFlipCardMessages = this.page.locator(
-            "//div[contains(@class,'flip-card') and .//div[contains(@class,'card-front')]//div[contains(.,'AI &') and contains(.,'Machine learning')]]//div[@class='card-text small']",
-        );
+        this.thirdCard = this.page.locator('.flip-card-inner')
+                                                .getByText('AI & Machine learning');
         this.letsGetStartedButton = this.page.locator(
             '//a[@title="Let\'s get started"]',
         );
     }
 
-    public async mouseHoverToAiMachineLearningFlipCard() {
-        await this.aiMachineLearningFlipCard.hover();
+    public async mouseHoverToThirdCard() {
+        await this.thirdCard.hover();
     }
 
-    public async getAiMachineLearningFlipCardMessage() {
-        return await this.aiMachineLearningFlipCardMessages.innerText();
+    public async getThirdCardFlippedMessage() {
+        return await this.thirdCard.innerText();
     }
 
     public async clickLetsGetStartedButton() {
@@ -39,8 +34,8 @@ export class RetirementWealthPage {
         await this.poweringInnovationRetirementServicesHeader.scrollIntoViewIfNeeded();
     }
 
-    public async printAiMachineLearningFlipCardMessage() {
-        console.log(await this.getAiMachineLearningFlipCardMessage());
+    public async printThirdCardFlippedMessage() {
+        console.log(await this.getThirdCardFlippedMessage());
     }
 
     public async scrollToBottom() {
