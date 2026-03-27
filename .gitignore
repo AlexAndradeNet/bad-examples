@@ -19,3 +19,8 @@ cypress/videos
 dist
 build
 coverage
+
+# Playwright Test Artifacts
+playwright-report
+.env
+test-results
