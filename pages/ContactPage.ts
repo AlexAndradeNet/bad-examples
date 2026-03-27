@@ -1,19 +1,3 @@
-import { expect, Page } from "playwright/test";
+import { BasePage } from './BasePage';
 
-export class ContactPage {
-
-    private readonly page: Page;
-
-    constructor(page: Page) {
-        this.page = page;
-    }
-
-    public async verifyContactPageUrl() {
-        await expect(this.page).toHaveURL(/.*contact/);
-    }
-
-    public async verifyContactPageTitle() {
-        await expect(this.page).toHaveTitle('Contact | Blankfactor');
-    }
-
-}
+export default class ContactPage extends BasePage {}

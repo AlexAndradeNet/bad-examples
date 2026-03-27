@@ -1,13 +1,12 @@
-import { Locator, Page } from "playwright/types/test";
+import { BasePage, Page, Locator } from './BasePage';
 
-export class RetirementWealthPage {
-    private readonly page: Page;
+export default class RetirementWealthPage extends BasePage {
     private readonly poweringInnovationRetirementServicesHeader: Locator;
     private readonly thirdCard: Locator;
     private readonly letsGetStartedButton: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.poweringInnovationRetirementServicesHeader = this.page.locator(
             "h2.section-title",
         );

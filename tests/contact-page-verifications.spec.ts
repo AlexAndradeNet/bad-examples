@@ -1,7 +1,7 @@
 import { test } from "../utilities/UITestUtilities";
-import { ContactPage } from "../pages/ContactPage";
+import ContactPage from "../pages/ContactPage";
 import { HomePage } from "../pages/HomePage";
-import { RetirementWealthPage } from "../pages/RetirementWealthPage";
+import RetirementWealthPage from "../pages/RetirementWealthPage";
 
 test("Verify contact page title and url @wip", async ({ page }) => {
 
@@ -17,11 +17,10 @@ test("Verify contact page title and url @wip", async ({ page }) => {
     console.log(`Third card flip message: ${flipCardMessage}`);
 
     await retirementWealthPage.scrollToBottom();
-
     await retirementWealthPage.clickLetsGetStartedButton();
 
     const contactPage = new ContactPage(page);
-    await contactPage.verifyContactPageUrl();
-    await contactPage.verifyContactPageTitle();
+    await contactPage.verifyPageUrl(/.*contact/);
+    await contactPage.verifyPageTitle('Contact | Blankfactor');
 
 });

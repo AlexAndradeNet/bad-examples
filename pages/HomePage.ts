@@ -1,12 +1,11 @@
-import { Locator, Page } from "@playwright/test";
+import { BasePage, Page, Locator } from './BasePage';
 
-export class HomePage {
-    private readonly page: Page;
+export class HomePage extends BasePage {
     private readonly industriesPageLink: Locator;
     private readonly retirementWealthLearnMoreButton: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.industriesPageLink = this.page.locator(".desktop-nav").getByRole(
             "link",
             { name: "Industries" },
