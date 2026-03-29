@@ -22,12 +22,4 @@ export default class RetirementPage {
     goToLetsGetStartedButton() {
         elements.letsGetStartedButton().click();
     }
-
-    verifyContactPageLoaded(urlFragment) {
-        cy.url().should('include', urlFragment);
-        cy.title().then((pageTitle) => {
-            cy.log('Page title:', pageTitle);
-            console.log('Page title:', pageTitle);
-        });
-    }
 }
