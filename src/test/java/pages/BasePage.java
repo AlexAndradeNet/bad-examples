@@ -1,18 +1,25 @@
-package utilities;
+package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.PropertiesUtilities;
+import utilities.WebDriverUtilities;
 
 import java.time.Duration;
 
-public class UIUtilities {
+class BasePage {
 
     public static WebDriverWait wait;
     public static JavascriptExecutor jsExecutor;
     public static Actions actions;
+
+    protected BasePage() {
+        PageFactory.initElements(WebDriverUtilities.getDriver(), this);
+    }
 
     static {
         wait = new WebDriverWait(WebDriverUtilities.getDriver(), Duration.ofSeconds(10));
@@ -20,23 +27,23 @@ public class UIUtilities {
         actions = new Actions(WebDriverUtilities.getDriver());
     }
 
-    public static void waitForElementToBeVisible(WebElement element) {
+    public void waitForElementToBeVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitForElementToBeClickable(WebElement element) {
+    public void waitForElementToBeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void scrollToElement(WebElement element) {
+    public void scrollToElement(WebElement element) {
         jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
 
-    public static void scrollToBottom() {
+    public void scrollToBottom() {
         jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
 
-    public static void click(WebElement element) {
+    public void click(WebElement element) {
         try {
             waitForElementToBeClickable(element);
             element.click();
@@ -47,7 +54,7 @@ public class UIUtilities {
         }
     }
 
-    public static void mouseHover(WebElement element) {
+    public void mouseHover(WebElement element) {
         try {
             actions.moveToElement(element).perform();
         } catch (RuntimeException e) {
@@ -56,13 +63,28 @@ public class UIUtilities {
         }
     }
 
-    public static String getText(WebElement element) {
+    public String getText(WebElement element) {
         try {
             return element.getText();
         } catch (RuntimeException e) {
             scrollToElement(element);
             return element.getText();
         }
+    }
+
+    public String getPageTitle() {
+        return WebDriverUtilities.getDriver().getTitle();
+    }
+
+    public String getCurrentUrl() {
+        return WebDriverUtilities.getDriver().getCurrentUrl();
+    }
+
+    public void manageCookies(String name, String value, String domain) {
+        WebDriverUtilities.getDriver().get(PropertiesUtilities.getProperty("url"));
+        var cookie = new org.openqa.selenium.Cookie.Builder(name, value).domain(domain).build();
+        WebDriverUtilities.getDriver().manage().addCookie(cookie);
+        WebDriverUtilities.getDriver().navigate().refresh();
     }
 
 }

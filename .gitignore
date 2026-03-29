@@ -3,3 +3,9 @@ target/
 *.iml
 *.ipr
 .DS_Store
+node_modules
+playwright-report
+patches
+cypress
+.env
+.last-run.json
