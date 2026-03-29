@@ -1,4 +1,4 @@
-const elements = {
+const _elements = {
     poweringInnovationSection: () => cy.get('h2.section-title'),
     thirdCard: () => cy.contains('.flip-card-inner', 'AI & Machine learning'),
     letsGetStartedButton: () => cy.contains('a', "Let's get started"),
@@ -6,10 +6,10 @@ const elements = {
 
 export default class RetirementPage {
     goToCardAndCopyText(expectedText) {
-        elements.poweringInnovationSection().scrollIntoView();
+        _elements.poweringInnovationSection().scrollIntoView();
         // Trigger the lazy loading of the cards
 
-        elements
+        _elements
             .thirdCard()
             .realHover()
             .invoke('text')
@@ -20,6 +20,6 @@ export default class RetirementPage {
     }
 
     goToLetsGetStartedButton() {
-        elements.letsGetStartedButton().click();
+        _elements.letsGetStartedButton().scrollIntoView().click();
     }
 }
