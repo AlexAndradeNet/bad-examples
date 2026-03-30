@@ -11,3 +11,5 @@ playwright/.auth
 .vscode/
 .DS_Store
 cypress
+target
+
