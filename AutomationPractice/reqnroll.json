@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    {
+      "name": "SpecFlow.Plus.LivingDocPlugin",
+      "type": "Generator"
+    }
+  ]
+}

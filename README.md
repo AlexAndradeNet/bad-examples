@@ -1,77 +1,59 @@
-# Cypress Automation: Blankfactor Website
+# AutomationPractice – Playwright con C#
 
-This project is an end-to-end (E2E) automation test using **Cypress**, written with **Gherkin syntax**, and structured following the **Page Object Model (POM)**. It also leverages advanced interactions like `realHover()` to mimic real user behavior.
-
----
-
-## Technologies & Tools Used
-
-| Tool                                                                               | Version              |
-| ---------------------------------------------------------------------------------- | -------------------- |
-| [Cypress](https://www.cypress.io)                                                  | ^15.8.2              |
-| [Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) | ^24.0.0              |
-| [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events)        | ^1.15.0              |
-| [esbuild](https://esbuild.github.io/)                                              | Used as preprocessor |
-| Node.js                                                                            | ≥ v18                |
+Este proyecto contiene un conjunto de pruebas automatizadas desarrolladas con **Playwright para .NET (C#)**, siguiendo el patrón **Page Object Model (POM)**.  
+El objetivo es automatizar flujos funcionales en la web, incluyendo navegación y validaciones visuales
 
 ---
 
-## Project Structure
+## Tecnologías utilizadas
 
-```text
-├── cypress/
-│   ├── e2e/
-│   │   └── features/
-│   │       └── blankfactor.feature        #  Gherkin scenario(.feature)
-│   └── support/
-│       ├── pages/
-│       │   └── HomePage.js                # Page Objects (POM)
-│       ├── step_definitions/
-│       │   └── blankfactor.cy.js          # Step Definitions
-│       └── e2e.js                         # Global configuration and hooks
-├── docs/                                  # Aditional project documentation
-├── .gitignore
-├── cypress.config.js                      # Cypress Main Configuration
-├── package.json                           # Dependencies and scripts
-├── package-lock.json
-└── README.md
-```
-
-## Automated Flow
-
-The scenario covers the following steps:
-
-1. _Visit the Blankfactor homepage_
-2. _Navigate to the Industries > Retirement and Wealth section_
-3. _Scroll to the “Powering innovation in retirement services” section_
-4. _Hover over the "AI & Machine Learning" card_
-5. _Copy and log the card’s back-side text_
-6. _Click the *Let's get started* button_
-7. _Assert the URL and page title of the Contact page_
+- **Lenguaje:** C#  
+- **Framework:** [Microsoft.Playwright](https://playwright.dev/dotnet/)  
+- **BDD:** Reqnroll
+- **Patrón:** Page Object Model (POM)  
+- **Ejecución de pruebas:** 'dotnet test'  
 
 ---
 
-## Advanced Features
+## 📁 Estructura del proyecto
 
-- `cy.realHover()`  
-  Used to simulate real hover actions on animated cards (`flip-card`) that respond to mouse movements.
-
-- `cy.get('@copiedCardText')`  
-  Uses aliases and `.invoke('text')` to capture dynamic content from the DOM.
+AutomationPractice/
+│
+├── Features/
+│   └── Hipertextual.feature
+│
+├── Pages/
+│   ├── BasePage.cs
+│   ├── HomePage.cs
+│   ├── ListArticlesPage.cs
+│   ├── ArticlePage.cs
+│   └── NewsletterPage.cs
+│
+├── Steps/
+│   ├── HomePageSteps.cs
+│   ├── ListArticlesSteps.cs
+│   ├── ArticleSteps.cs
+│   └── Newslettersteps.cs
+│
+├── StepDefinitions/
+│   └── HipertextualStepDefinitions.cs
+│
+├── TestResults/
+│   └── ReqnrollReport.html
+│ 
+├── README.md
+├── reqnroll.json
+├── Settings.runsettings
+└── AutomationPractice.csproj
 
 ---
 
-## Available Scripts
+## Instalación y configuración
 
-You can run tests using the following commands:
+**Prerequisitos**
 
-```bash
-# Open the Cypress test runner (GUI)
-npm run cypress:open
+1. Instalar el SDK de.Net: https://dotnet.microsoft.com/download
 
-# Run the feature file in CLI mode
-npm run test:navigation
+2. Para ejecutar: dotnet test
 
-# Run tests in headed mode (useful for CI/CD)
-npm run headed
-```
+3. Para ejecutar con reporte: dotnet test --logger:"html;LogFileName=ReqnrollReport.html" 
